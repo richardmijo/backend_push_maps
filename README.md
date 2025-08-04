@@ -127,7 +127,7 @@ Abre tu navegador y visita:
 
 Ahí puedes probar todos los endpoints desde una interfaz gráfica.
 
-📌 Endpoints disponibles
+Endpoints disponibles
 | Método | Ruta                             | Descripción                              |
 |--------|----------------------------------|------------------------------------------|
 | POST   | `/api/users`                     | Crear usuario                            |
@@ -144,15 +144,14 @@ Ahí puedes probar todos los endpoints desde una interfaz gráfica.
 
 
 
-🧪 Pruebas recomendadas
+Pruebas recomendadas
 Usar Swagger UI en: http://localhost:3000/api/docs
 
 O bien usar Postman (puedo proporcionarte una colección si lo necesitas)
 
-🗂️ Estructura del proyecto
-plaintext
-Copiar
-Editar
+Estructura del proyecto
+
+```bash
 backend_push_maps/
 ├── firebase/
 │   └── serviceAccountKey.json       ← 🔐 Clave privada de Firebase
@@ -166,16 +165,13 @@ backend_push_maps/
 ├── .env                             ← Variables de entorno
 ├── .gitignore                       ← Archivos ignorados por Git
 ├── index.js                         ← Punto de entrada del servidor
-👨‍🏫 Autor
+```
+
+Autor
 Richard Armijos
 Docente – Universidad Internacional del Ecuador
 Materia: Programación Móvil en Flutter
 📍 Loja, Ecuador
-📧 richard.armijos@ejemplo.com
 
-✅ Licencia
+Licencia
 Este proyecto tiene fines académicos y educativos. Puedes utilizarlo, adaptarlo y expandirlo libremente para tus clases, investigaciones o proyectos personales.
-
-yaml
-Copiar
-Editar
