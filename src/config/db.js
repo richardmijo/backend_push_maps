@@ -10,6 +10,7 @@ const sequelize = new Sequelize(
     dialect: 'postgres',
     port: process.env.DB_PORT,
     logging: false,
+    timezone: '-05:00' // Hora de Ecuador
   }
 );
 

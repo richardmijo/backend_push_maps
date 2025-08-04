@@ -103,6 +103,7 @@ Guarda el archivo como:
 
 ```bash
 firebase/serviceAccountKey.json
+firebase/uide-43a9f-firebase-adminsdk-fbsvc-34fab192ed.json
 ```
 ⚠️ Este archivo ya está en .gitignore, no debe subirse a ningún repositorio público.
 
