@@ -154,7 +154,7 @@ Estructura del proyecto
 ```bash
 backend_push_maps/
 ├── firebase/
-│   └── serviceAccountKey.json       ← 🔐 Clave privada de Firebase
+│   └── serviceAccountKey.json       ← Clave privada de Firebase
 ├── src/
 │   ├── config/                      ← Configuración de DB y Firebase
 │   ├── controllers/                 ← Lógica de endpoints
@@ -167,11 +167,8 @@ backend_push_maps/
 ├── index.js                         ← Punto de entrada del servidor
 ```
 
-Autor
-Richard Armijos
-Docente – Universidad Internacional del Ecuador
-Materia: Programación Móvil en Flutter
-📍 Loja, Ecuador
-
-Licencia
-Este proyecto tiene fines académicos y educativos. Puedes utilizarlo, adaptarlo y expandirlo libremente para tus clases, investigaciones o proyectos personales.
+### 👨‍🏫 Autor
+**Richard Armijos**  
+Docente – Universidad Internacional del Ecuador  
+Materia: *Programación Móvil en Flutter*  
+Loja, Ecuador
