@@ -95,56 +95,54 @@ CREATE TABLE geo_objects (
 ### 4. Configurar Firebase
 Para enviar notificaciones push, necesitas configurar Firebase:
 
-Ve a Firebase Console y selecciona tu proyecto.
-
-Haz clic en ⚙️ Configuración del proyecto > Cuentas de servicio.
-
-Haz clic en "Generar nueva clave privada".
+- Ve a Firebase Console y selecciona tu proyecto.
+- Haz clic en ⚙️ Configuración del proyecto > Cuentas de servicio.
+- Haz clic en "Generar nueva clave privada".
 
 Guarda el archivo como:
 
-bash
-Copiar
-Editar
+```bash
 firebase/serviceAccountKey.json
+```
 ⚠️ Este archivo ya está en .gitignore, no debe subirse a ningún repositorio público.
 
 ### 5. Ejecutar el servidor
 Para iniciar el servidor en modo desarrollo:
 
-bash
-Copiar
-Editar
+```bash
 npm run dev
+```
 Si todo está correcto, verás algo como:
 
-less
-Copiar
-Editar
+```bash
 🟢 Conectado a PostgreSQL
 📦 Modelos sincronizados
 ✅ Servidor escuchando en http://localhost:3000
+```
 
 ### 6. Probar con Swagger
 Abre tu navegador y visita:
 
-👉 http://localhost:3000/api/docs
+- http://localhost:3000/api/docs
 
 Ahí puedes probar todos los endpoints desde una interfaz gráfica.
 
 📌 Endpoints disponibles
-Método	Ruta	Descripción
-POST	/api/users	Crear usuario
-GET	/api/users	Listar usuarios
-POST	/api/tokens	Registrar token de dispositivo
-GET	/api/tokens/:userId	Obtener tokens por usuario
-POST	/api/notifications/send-one	Enviar notificación a un usuario
-POST	/api/notifications/send-many	Enviar notificación a varios usuarios
-POST	/api/geo	Crear punto/ruta/polígono
-GET	/api/geo	Listar objetos geográficos
-GET	/api/geo/:id	Ver objeto geográfico específico
-PUT	/api/geo/:id	Actualizar objeto geográfico
-DELETE	/api/geo/:id	Eliminar objeto geográfico
+| Método | Ruta                             | Descripción                              |
+|--------|----------------------------------|------------------------------------------|
+| POST   | `/api/users`                     | Crear usuario                            |
+| GET    | `/api/users`                     | Listar usuarios                          |
+| POST   | `/api/tokens`                    | Registrar token de dispositivo           |
+| GET    | `/api/tokens/:userId`            | Obtener tokens por usuario               |
+| POST   | `/api/notifications/send-one`    | Enviar notificación a un usuario         |
+| POST   | `/api/notifications/send-many`   | Enviar notificación a varios usuarios    |
+| POST   | `/api/geo`                       | Crear punto/ruta/polígono                |
+| GET    | `/api/geo`                       | Listar objetos geográficos               |
+| GET    | `/api/geo/:id`                   | Ver objeto geográfico específico         |
+| PUT    | `/api/geo/:id`                   | Actualizar objeto geográfico             |
+| DELETE | `/api/geo/:id`                   | Eliminar objeto geográfico               |
+
+
 
 🧪 Pruebas recomendadas
 Usar Swagger UI en: http://localhost:3000/api/docs
