@@ -1,0 +1,270 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "API Backend Push & Mapas",
+    "version": "1.0.0",
+    "description": "API RESTful para gestión de usuarios, notificaciones push y geodatos para mapas"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000/api"
+    }
+  ],
+  "paths": {
+    "/users": {
+      "post": {
+        "summary": "Crear nuevo usuario",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/User"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Usuario creado"
+          },
+          "409": {
+            "description": "Correo ya registrado"
+          }
+        }
+      },
+      "get": {
+        "summary": "Listar todos los usuarios",
+        "responses": {
+          "200": {
+            "description": "Lista de usuarios"
+          }
+        }
+      }
+    },
+    "/tokens": {
+      "post": {
+        "summary": "Registrar token de dispositivo",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Token"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Token registrado"
+          }
+        }
+      }
+    },
+    "/tokens/{userId}": {
+      "get": {
+        "summary": "Obtener tokens de un usuario",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "schema": { "type": "integer" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Lista de tokens"
+          }
+        }
+      }
+    },
+    "/notifications/send-one": {
+      "post": {
+        "summary": "Enviar notificación a un usuario",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationOne"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Notificación enviada"
+          }
+        }
+      }
+    },
+    "/notifications/send-many": {
+      "post": {
+        "summary": "Enviar notificación a varios usuarios",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificationMany"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Notificaciones enviadas"
+          }
+        }
+      }
+    },
+    "/geo": {
+      "post": {
+        "summary": "Crear objeto geográfico",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GeoObject"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Objeto geográfico creado"
+          }
+        }
+      },
+      "get": {
+        "summary": "Listar todos los objetos geográficos",
+        "responses": {
+          "200": {
+            "description": "Lista de objetos"
+          }
+        }
+      }
+    },
+    "/geo/{id}": {
+      "get": {
+        "summary": "Obtener objeto por ID",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": { "type": "integer" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Objeto encontrado"
+          }
+        }
+      },
+      "put": {
+        "summary": "Actualizar objeto por ID",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": { "type": "integer" }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GeoObject"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Objeto actualizado"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Eliminar objeto por ID",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": { "type": "integer" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Objeto eliminado"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "User": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "email": { "type": "string" }
+        }
+      },
+      "Token": {
+        "type": "object",
+        "properties": {
+          "userId": { "type": "integer" },
+          "token": { "type": "string" }
+        }
+      },
+      "NotificationOne": {
+        "type": "object",
+        "properties": {
+          "userId": { "type": "integer" },
+          "title": { "type": "string" },
+          "body": { "type": "string" }
+        }
+      },
+      "NotificationMany": {
+        "type": "object",
+        "properties": {
+          "userIds": {
+            "type": "array",
+            "items": { "type": "integer" }
+          },
+          "title": { "type": "string" },
+          "body": { "type": "string" }
+        }
+      },
+      "GeoObject": {
+        "type": "object",
+        "properties": {
+          "userId": { "type": "integer" },
+          "name": { "type": "string" },
+          "type": {
+            "type": "string",
+            "enum": ["point", "route", "polygon"]
+          },
+          "coordinates": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "lat": { "type": "number" },
+                "lng": { "type": "number" }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

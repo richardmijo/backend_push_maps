@@ -1,0 +1,41 @@
+# Node.js
+node_modules/
+.env
+.env.local
+.env.*.local
+
+# Firebase credentials
+firebase/serviceAccountKey.json
+firebase/uide-43a9f-firebase-adminsdk-fbsvc-34fab192ed.json
+firebase/*.json
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Database dumps
+*.sql
+*.sqlite
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Swagger cache
+swagger.json.bak
+swagger-output.json
+
+# Optional: coverage (si usas tests)
+coverage/
+
+# Optional: dist/ (si luego transpilas o generas builds)
+dist/
+firebase/*.json
