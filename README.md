@@ -1,4 +1,4 @@
-# 📡 Backend Push & Mapas
+# Backend Push & Mapas
 
 Este proyecto es una API RESTful desarrollada con **Node.js**, **Express** y **PostgreSQL**, diseñada para integrarse con una aplicación Flutter educativa. Sus principales funcionalidades incluyen:
 
@@ -9,7 +9,7 @@ Este proyecto es una API RESTful desarrollada con **Node.js**, **Express** y **P
 
 ---
 
-## 🧰 Requisitos previos
+## Requisitos previos
 
 Antes de comenzar, asegúrate de tener instalado:
 
@@ -19,7 +19,7 @@ Antes de comenzar, asegúrate de tener instalado:
 
 ---
 
-## ⚙️ Configuración del entorno
+## Configuración del entorno
 
 ### 1. Clonar el repositorio
 
@@ -50,15 +50,13 @@ DB_PORT=5432
 ### 3. Crear base de datos y tablas en PostgreSQL
 Abre la terminal y accede al cliente de PostgreSQL:
 
-bash
-Copiar
-Editar
+```bash
 psql -U postgres
+```
+
 Ejecuta los siguientes comandos:
 
-sql
-Copiar
-Editar
+```bash
 -- Crear base de datos
 CREATE DATABASE push_maps;
 \c push_maps
@@ -92,6 +90,7 @@ CREATE TABLE geo_objects (
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+```
 
 ### 4. Configurar Firebase
 Para enviar notificaciones push, necesitas configurar Firebase:
