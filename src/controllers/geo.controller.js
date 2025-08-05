@@ -1,10 +1,10 @@
 const { GeoObject } = require('../models');
 
 const createGeoObject = async (req, res) => {
-  const { userId, name, type, coordinates } = req.body;
+  const { user_id, name, type, coordinates } = req.body;
 
   try {
-    const geo = await GeoObject.create({ userId, name, type, coordinates });
+    const geo = await GeoObject.create({ user_id, name, type, coordinates });
     return res.status(201).json(geo);
   } catch (err) {
     return res.status(500).json({ error: err.message });
