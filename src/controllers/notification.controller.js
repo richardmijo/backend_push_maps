@@ -4,9 +4,9 @@ const { sendNotification } = require('../services/notification.service');
 // Enviar a un usuario
 const sendToUser = async (req, res) => {
   const { userId, title, body } = req.body;
-
+  const user_id = userId;
   try {
-    const tokens = await DeviceToken.findAll({ where: { userId } });
+    const tokens = await DeviceToken.findAll({ where: { user_id } });
     if (tokens.length === 0) return res.status(404).json({ message: 'Usuario sin tokens registrados' });
 
     const response = await sendNotification({
