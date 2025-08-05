@@ -41,8 +41,8 @@ sequelize.authenticate()
   .catch(err => console.error('🔴 Error de conexión a DB:', err));
 
 // Iniciar servidor
-app.listen(port, () => {
-  console.log(`✅ Servidor escuchando en http://localhost:${port}`);
+app.listen(port, '0.0.0.0',() => {
+  console.log(`✅ Servidor escuchando en http://0.0.0.0:${port}`);
 });
 
 

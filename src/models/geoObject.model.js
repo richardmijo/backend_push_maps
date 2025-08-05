@@ -7,9 +7,13 @@ const GeoObject = sequelize.define('GeoObject', {
     autoIncrement: true,
     primaryKey: true,
   },
-  userId: {
+  user_id: { // 👈 consistente con el modelo User y DeviceToken
     type: DataTypes.INTEGER,
     allowNull: true,
+    references: {
+      model: 'users',
+      key: 'id'
+    }
   },
   name: {
     type: DataTypes.STRING(100),
@@ -26,6 +30,7 @@ const GeoObject = sequelize.define('GeoObject', {
 }, {
   tableName: 'geo_objects',
   timestamps: true,
+  underscored: true // 👈 esto convierte camelCase en snake_case automáticamente
 });
 
 module.exports = GeoObject;
