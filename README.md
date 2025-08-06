@@ -116,9 +116,9 @@ npm run dev
 Si todo está correcto, verás algo como:
 
 ```bash
-🟢 Conectado a PostgreSQL
-📦 Modelos sincronizados
-✅ Servidor escuchando en http://localhost:3000
+Conectado a PostgreSQL
+Modelos sincronizados
+Servidor escuchando en http://localhost:3000
 ```
 
 ### 6. Probar con Swagger
@@ -168,7 +168,7 @@ backend_push_maps/
 ├── index.js                         ← Punto de entrada del servidor
 ```
 
-### 👨‍🏫 Autor
+### Autor
 **Richard Armijos**  
 Docente – Universidad Internacional del Ecuador  
 Materia: *Programación Móvil en Flutter*  

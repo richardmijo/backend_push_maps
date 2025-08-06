@@ -26,23 +26,23 @@ app.use(bodyParser.json());
 
 // Test route
 app.get('/', (req, res) => {
-  res.send('Servidor API Push + Maps funcionando 🚀');
+  res.send('Servidor API Push + Maps funcionando.....');
 });
 
 // Conexión a base de datos
 sequelize.authenticate()
   .then(() => {
-    console.log('🟢 Conectado a PostgreSQL');
+    console.log('✌️ Conectado a PostgreSQL');
     return syncModels(); // sincroniza tablas
   })
   .then(() => {
-    console.log('📦 Modelos sincronizados');
+    console.log('☝️✌️ Modelos sincronizados');
   })
-  .catch(err => console.error('🔴 Error de conexión a DB:', err));
+  .catch(err => console.error('Error de conexión a DB:', err));
 
 // Iniciar servidor
 app.listen(port, '0.0.0.0',() => {
-  console.log(`✅ Servidor escuchando en http://0.0.0.0:${port}`);
+  console.log(`☝️ Servidor escuchando en http://0.0.0.0:${port}`);
 });
 
 
